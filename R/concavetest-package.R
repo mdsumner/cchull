@@ -1,4 +1,3 @@
-#' @importFrom Rcpp evalCpp
 #' @useDynLib concavetest, .registration = TRUE
 #' @keywords internal
 "_PACKAGE"

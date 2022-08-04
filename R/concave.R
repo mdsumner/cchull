@@ -23,7 +23,7 @@ c_cpp <- function (x, y, concavity = 2, length_threshold = NULL)
     xy <- data.frame (x = x, y = y)
     h <- grDevices::chull (xy)
 
-    res <- rcpp_concaveman (xy, h - 1, concavity, length_threshold)
+    res <- cpp_concaveman (xy, h - 1L, concavity, length_threshold)
     rbind (res, res [1, ])
 }
 

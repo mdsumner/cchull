@@ -4,7 +4,7 @@
 \alias{c_cpp}
 \title{c_cpp}
 \usage{
-c_cpp(x, y, concavity = 2, length_threshold = 0)
+c_cpp(x, y, concavity = 2, length_threshold = NULL)
 }
 \arguments{
 \item{x}{x values}

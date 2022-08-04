@@ -17,7 +17,8 @@
 #include <queue>
 #include <assert.h>
 
-#include "Rcpp.h"
+#include "cpp11.hpp"
+using namespace cpp11;
 
 template<typename T, typename... Args>
 std::unique_ptr<T> make_unique(Args&&... args) {
@@ -191,12 +192,12 @@ public:
     m_is_leaf(true), m_data(data), m_bounds(bounds) {
         for (auto i = 0; i < DIM; i++)
             if (bounds[i] > bounds[i + DIM])
-                Rcpp::stop("Bounds minima have to be less than maxima"); // # nocov
+                cpp11::stop("Bounds minima have to be less than maxima"); // # nocov
     }
 
     void insert(data_type data, const bounds_type &bounds) {
         if (m_is_leaf)
-            Rcpp::stop("Cannot insert into leaves"); // # nocov
+            cpp11::stop("Cannot insert into leaves"); // # nocov
 
         m_bounds = updated_bounds(bounds);
         if (m_children.size() < MAX_CHILDREN) {
@@ -257,7 +258,7 @@ public:
 
     void erase(data_type data, const bounds_type &bounds) {
         if (m_is_leaf)
-            Rcpp::stop ("Cannot erase from leaves"); // # nocov
+            cpp11::stop ("Cannot erase from leaves"); // # nocov
 
         if (!intersects(bounds))
             return;
@@ -442,7 +443,7 @@ public:
         auto elem = new CircularElement<T>(std::forward<Args>(args)...);
 
         if (prev == nullptr && m_last != nullptr)
-            Rcpp::stop ("Once the list is non-empty you must specify where to insert"); // # nocov
+            cpp11::stop ("Once the list is non-empty you must specify where to insert"); // # nocov
 
         if (prev == nullptr) {
             elem->m_prev = elem->m_next = elem;
@@ -709,5 +710,5 @@ template<class T, int MAX_CHILDREN> bool noIntersections(
     return true;
 }
 
-Rcpp::DataFrame rcpp_concaveman (Rcpp::DataFrame xy, Rcpp::IntegerVector hull_in,
-        const double concavity, const double lengthThreshold);
+
+

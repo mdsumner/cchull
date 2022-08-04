@@ -2,5 +2,4 @@
 
 export(c_cpp)
 export(c_js)
-importFrom(Rcpp,evalCpp)
 useDynLib(concavetest, .registration = TRUE)
