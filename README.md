@@ -1,5 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/mdsumner/cchull/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mdsumner/cchull/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 # cchull
 
@@ -26,14 +30,14 @@ lines(cchull(m$x[!bad], m$y[!bad], concavity = 15))
 plot(ozmaps::ozmap_states$geometry[6][[1]][[14]][[1]], asp = 1/cos(42 * pi/180), xlab = "", ylab = "")
 ```
 
-![](README_files/figure-gfm/cc-1.png)<!-- -->
+<img src="man/figures/README-cc-1.png" width="100%" />
 
 ``` r
 mat <- ozmaps::ozmap_states$geometry[6][[1]][[14]][[1]]
 lines(cchull(mat[,1], mat[,2]))
 ```
 
-![](README_files/figure-gfm/cc-2.png)<!-- -->
+<img src="man/figures/README-cc-2.png" width="100%" />
 
 ## Code of Conduct
 
