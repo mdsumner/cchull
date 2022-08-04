@@ -1,3 +1,7 @@
 ^cchull\.Rproj$
 ^\.Rproj\.user$
 ^CODE_OF_CONDUCT\.md$
+^\.github$
+^makefile$
+^README.Rmd$
+^README_files$

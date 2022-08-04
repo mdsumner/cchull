@@ -1,3 +1,4 @@
+#' @importFrom stats quantile var
 MASS_bandwidth.nrd <-
 function (x)
 {
@@ -10,14 +11,20 @@ function (x)
 
 #' cchull concave hull
 #'
+#' More docs needed
 #' @param x x values
-#' @param concavity
-#' @param length_threshold
 #' @param y y values
+#' @param concavity a relative measure of concavity. 1 results in a relatively detailed shape, Infinity results in a convex hull. You can use values lower than 1, but they can produce pretty crazy shapes.
+#' @param length_threshold when a segment length is under this threshold, it stops being considered for further detalization. Higher values result in simpler shapes.
 #'
-#' @return hull
+#'
+#' @return concave hull coordinates
 #'
 #' @export
+#' @examples
+#' plot(xy <- matrix(rnorm(160), ncol = 2))
+#' lines(cchull(xy[,1], xy[,2]))
+#'
 cchull <- function (x, y, concavity = 2, length_threshold = NULL)
 {
     if (is.null(length_threshold)) {

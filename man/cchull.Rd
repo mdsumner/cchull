@@ -10,10 +10,19 @@ cchull(x, y, concavity = 2, length_threshold = NULL)
 \item{x}{x values}
 
 \item{y}{y values}
+
+\item{concavity}{a relative measure of concavity. 1 results in a relatively detailed shape, Infinity results in a convex hull. You can use values lower than 1, but they can produce pretty crazy shapes.}
+
+\item{length_threshold}{when a segment length is under this threshold, it stops being considered for further detalization. Higher values result in simpler shapes.}
 }
 \value{
-hull
+concave hull coordinates
 }
 \description{
-cchull concave hull
+More docs needed
+}
+\examples{
+plot(xy <- matrix(rnorm(160), ncol = 2))
+lines(cchull(xy[,1], xy[,2]))
+
 }

@@ -2,8 +2,8 @@
 % Please edit documentation in R/cchull-package.R
 \docType{package}
 \name{cchull-package}
-\alias{cchull}
 \alias{cchull-package}
+\alias{_PACKAGE}
 \title{cchull: Concave Hull}
 \description{
 Provide 'cpp' versions of concave hull algorithm using the concaveman library.

@@ -2,4 +2,6 @@
 
 export(c_js)
 export(cchull)
+importFrom(stats,quantile)
+importFrom(stats,var)
 useDynLib(cchull, .registration = TRUE)
