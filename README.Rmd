@@ -5,29 +5,32 @@ output: github_document
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 
-# concavetest 
+# cchull
 
-Test package to benchmark Mapbox's 'concaveman' algorithm in both javascipt and
-C++ versions. Requires `libv8` for the `concaveman` package which wraps the
-`.js` version.
+Concave hull with 'concaveman' C++ library. 
 
-```{r setup}
-if (!"concavetest" %in% rownames (installed.packages ()))
-    remotes::install_github("mpadge/concavetest")
-library (concavetest)
-library (rbenchmark)
+Modified from Mark Padgham's demonstration [concavetest](https://github.com/mpadge/concavetest). 
+
+Install
+
+```R
+remotes::install_github("mdsumner/cchull")
 ```
 
-```{r benchmark}
-n <- 1e4
-x <- runif (n)
-y <- runif (n)
-knitr::kable (rbenchmark::benchmark (
-                                     c_js (x, y),
-                                     c_cpp (x, y),
-                                     replications = 100))
+Example
+
+```{r cc}
+library(cchull)
+m <- maps::map(regions = "new zealand", plot = FALSE, xlim = c(160, 179), ylim = c(-50, -40))
+maps::map(m, col = "firebrick", lwd = 4)
+bad <- is.na(m$x)
+lines(cchull(m$x[!bad], m$y[!bad], concavity = 15))
+
+plot(ozmaps::ozmap_states$geometry[6][[1]][[14]][[1]], asp = 1/cos(42 * pi/180), xlab = "", ylab = "")
+mat <- ozmaps::ozmap_states$geometry[6][[1]][[14]][[1]]
+lines(cchull(mat[,1], mat[,2]))
 ```
 
-And C++ is loads faster than javascript. The end.
-
-
+## Code of Conduct
+  
+Please note that the cchull project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.

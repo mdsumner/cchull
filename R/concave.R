@@ -8,14 +8,17 @@ function (x)
   out
 }
 
-#' c_cpp
+#' cchull concave hull
 #'
 #' @param x x values
+#' @param concavity
+#' @param length_threshold
 #' @param y y values
+#'
 #' @return hull
 #'
 #' @export
-c_cpp <- function (x, y, concavity = 2, length_threshold = NULL)
+cchull <- function (x, y, concavity = 2, length_threshold = NULL)
 {
     if (is.null(length_threshold)) {
       length_threshold <- max(c(MASS_bandwidth.nrd(x), MASS_bandwidth.nrd(y)))
@@ -26,6 +29,8 @@ c_cpp <- function (x, y, concavity = 2, length_threshold = NULL)
     res <- cpp_concaveman (xy, h - 1L, concavity, length_threshold)
     rbind (res, res [1, ])
 }
+
+c_cpp <- cchull
 
 #' c_js
 #'

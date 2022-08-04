@@ -1,4 +1,4 @@
-#' @useDynLib concavetest, .registration = TRUE
+#' @useDynLib cchull, .registration = TRUE
 #' @keywords internal
 "_PACKAGE"
 

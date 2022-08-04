@@ -1,11 +1,14 @@
-Package: concavetest
-Title: Test 'libv8' and 'cpp' versions of concaveman algorithm
-Version: 0.0.1
-Authors@R: c(
-    person("Mark", "Padgham", email="mark.padgham@email.com", role=c("aut", "cre")),
+Package: cchull
+Title: Concave Hull
+Version: 0.0.1.9001
+Authors@R: 
+  c(
+    person("Mark", "Padgham",  role=c("aut")),
     person("Stanislaw", "Adaszewski", role = "cph",
-        comment = "author of include concaveman-cpp code"))
-Description: Test 'libv8' and 'cpp' versions of concaveman algorithm.
+        comment = "author of include concaveman-cpp code"), 
+   person("Michael", "Sumner", email="mdsumner@email.com",  role=c("cre"), 
+        comment = "forked from original mpadge/concavetest"))
+Description: Provide 'cpp' versions of concave hull algorithm using the concaveman library.
 License: GPL-3 | BSD_2_clause + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -18,7 +21,7 @@ LinkingTo:
     cpp11
 SystemRequirements:
     C++11
-URL: https://github.com/mpadge/concavetest
-BugReports: https://github.com/mpadge/concavetest/issues
+URL: https://github.com/hypertidy/cchull
+BugReports: https://github.com/hypertidy/cchull/issues
 Language: en-GB
 RoxygenNote: 7.2.1
