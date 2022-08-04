@@ -65,6 +65,8 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
+
+
 <div class="section level1">
 <div class="page-header"><h1 id="cchull">cchull<a class="anchor" aria-label="anchor" href="#cchull"></a>
 </h1></div>
@@ -82,17 +84,18 @@
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="fu"><a href="reference/cchull.html">cchull</a></span><span class="op">(</span><span class="va">m</span><span class="op">$</span><span class="va">x</span><span class="op">[</span><span class="op">!</span><span class="va">bad</span><span class="op">]</span>, <span class="va">m</span><span class="op">$</span><span class="va">y</span><span class="op">[</span><span class="op">!</span><span class="va">bad</span><span class="op">]</span>, concavity <span class="op">=</span> <span class="fl">15</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu">ozmaps</span><span class="fu">::</span><span class="va">ozmap_states</span><span class="op">$</span><span class="va">geometry</span><span class="op">[</span><span class="fl">6</span><span class="op">]</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[[</span><span class="fl">14</span><span class="op">]</span><span class="op">]</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>, asp <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/Trig.html" class="external-link">cos</a></span><span class="op">(</span><span class="fl">42</span> <span class="op">*</span> <span class="va">pi</span><span class="op">/</span><span class="fl">180</span><span class="op">)</span>, xlab <span class="op">=</span> <span class="st">""</span>, ylab <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
-<p><img src="README_files/figure-gfm/cc-1.png"><!-- --></p>
+<p><img src="reference/figures/README-cc-1.png" width="100%"></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mat</span> <span class="op">&lt;-</span> <span class="fu">ozmaps</span><span class="fu">::</span><span class="va">ozmap_states</span><span class="op">$</span><span class="va">geometry</span><span class="op">[</span><span class="fl">6</span><span class="op">]</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[[</span><span class="fl">14</span><span class="op">]</span><span class="op">]</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="fu"><a href="reference/cchull.html">cchull</a></span><span class="op">(</span><span class="va">mat</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">mat</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="README_files/figure-gfm/cc-2.png"><!-- --></p>
+<p><img src="reference/figures/README-cc-2.png" width="100%"></p>
 <div class="section level2">
 <h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
 </h2>
 <p>Please note that the cchull project is released with a <a href="https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -136,7 +139,12 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/mdsumner/cchull/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/mdsumner/cchull/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+</ul>
+</div>
 
   </div>
 </div>
